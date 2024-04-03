@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 // simple calculator
 import inquirer from "inquirer";
 
