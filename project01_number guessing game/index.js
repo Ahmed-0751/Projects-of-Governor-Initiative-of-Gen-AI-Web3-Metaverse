@@ -1,7 +1,10 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
 // Generate a random number using Random function
 let generatedNum = Math.floor(Math.random() * 10);
+// using loop to contiue the game if guess is wrong
 while (true) {
+    // taking input from user
     const answer = await inquirer.prompt([
         {
             type: "number",
@@ -10,9 +13,10 @@ while (true) {
         }
     ]);
     let ans = answer.guess;
+    // condition to check whether user guessed correct number or not
     if (generatedNum == ans) {
         console.log("Congratulations! You guessed correct number.");
-        break;
+        break; // exit the loop 
     }
     else {
         if (generatedNum > ans) {
