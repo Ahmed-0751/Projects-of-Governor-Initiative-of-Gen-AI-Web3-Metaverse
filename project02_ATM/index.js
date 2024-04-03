@@ -20,7 +20,7 @@ while (remainingAttempt > 0) {
     ]);
     // Check whether the pin entered is correct or not
     if (answerPin.pin === pin) {
-        console.log(chalk.greenBright.bold("Congratulations! LogIn Successfully."));
+        console.log(chalk.blueBright.bold("Congratulations! LogIn Successfully."));
         // Ask user to perform any operation
         let answerOperation = await inquirer.prompt([
             {
@@ -33,7 +33,7 @@ while (remainingAttempt > 0) {
         // Check which operation does the user want to perform
         if (answerOperation.operation === "Check Balance") {
             console.log(chalk.blueBright(`Your current balance is ${currBalance}.`));
-            console.log(chalk.greenBright.bold("Thanks for using our ATM service."));
+            console.log(chalk.blueBright.bold("Thanks for using our ATM service."));
         }
         else if (answerOperation.operation === "Withdraw") {
             let answerAmount = await inquirer.prompt([
@@ -50,7 +50,7 @@ while (remainingAttempt > 0) {
                 currBalance -= answerAmount.amount;
                 console.log(`Rs. ${answerAmount.amount} has withdrawn Successfully!`);
                 console.log(chalk.blueBright(`Your remaining balance is ${currBalance}.`));
-                console.log(chalk.greenBright.bold("Thanks for using our ATM service."));
+                console.log(chalk.blueBright.bold("Thanks for using our ATM service."));
             }
         }
         break; // Exit the loop if PIN is correct
